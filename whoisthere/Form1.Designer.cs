@@ -61,6 +61,7 @@
             this.pingBtn.TabIndex = 2;
             this.pingBtn.Text = "Ping";
             this.pingBtn.UseVisualStyleBackColor = true;
+            this.pingBtn.Click += new System.EventHandler(this.pingBtn_Click);
             // 
             // Form1
             // 
