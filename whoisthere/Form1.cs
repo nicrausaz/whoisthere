@@ -21,7 +21,7 @@ namespace whoisthere
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,24 +36,16 @@ namespace whoisthere
 
         private void pingBtn_Click(object sender, EventArgs e)
         {
-            //String ipToReach;
             Ping pingSender = new Ping();
-            IPAddress address = IPAddress.Loopback;
+            string ipAddress = ipRequestBox.Text;
+            Console.WriteLine(ipAddress);
+            IPAddress address = IPAddress.Parse(ipAddress);
             PingReply reply = pingSender.Send(address);
-
-            if (reply.Status == IPStatus.Success)
-            {
+            if(reply.Status == IPStatus.Success){
                 Console.WriteLine("Address: {0}", reply.Address.ToString());
-                Console.WriteLine("RoundTrip time: {0}", reply.RoundtripTime);
-                Console.WriteLine("Time to live: {0}", reply.Options.Ttl);
-                Console.WriteLine("Don't fragment: {0}", reply.Options.DontFragment);
-                Console.WriteLine("Buffer size: {0}", reply.Buffer.Length);
-            }
-            else
-            {
+            }else{
                 Console.WriteLine(reply.Status);
             }
-           
         }
     }
 }

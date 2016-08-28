@@ -40,7 +40,7 @@
             this.ipRequestBox.Name = "ipRequestBox";
             this.ipRequestBox.Size = new System.Drawing.Size(101, 20);
             this.ipRequestBox.TabIndex = 0;
-            this.ipRequestBox.Text = "192.168.1.";
+            this.ipRequestBox.Text = "192.168.1.1";
             this.ipRequestBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
