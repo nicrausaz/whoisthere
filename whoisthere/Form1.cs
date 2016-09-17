@@ -40,11 +40,14 @@ namespace whoisthere
             string ipAddress = ipRequestBox.Text;
             Console.WriteLine(ipAddress);
             IPAddress address = IPAddress.Parse(ipAddress);
+            Console.WriteLine(address);
             PingReply reply = pingSender.Send(address);
             if(reply.Status == IPStatus.Success){
-                Console.WriteLine("Address: {0}", reply.Address.ToString());
+                Console.WriteLine("Success");
+                MessageBox.Show("Host ping has succeded", "Success");
             }else{
                 Console.WriteLine(reply.Status);
+                MessageBox.Show("Host Unreachable", "Failed");
             }
         }
     }
