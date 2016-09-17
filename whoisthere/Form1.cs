@@ -21,17 +21,14 @@ namespace whoisthere
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void pingBtn_Click(object sender, EventArgs e)
@@ -44,11 +41,16 @@ namespace whoisthere
             PingReply reply = pingSender.Send(address);
             if(reply.Status == IPStatus.Success){
                 Console.WriteLine("Success");
-                MessageBox.Show("Host ping has succeded", "Success");
+                MessageBox.Show("Host reached", "Success");
             }else{
                 Console.WriteLine(reply.Status);
                 MessageBox.Show("Host Unreachable", "Failed");
             }
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            ipRequestBox.Text = "192.168.1.1";
         }
     }
 }
